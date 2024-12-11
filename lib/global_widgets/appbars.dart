@@ -13,7 +13,7 @@ class AppBarsWidgets {
       systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.deepOrange,
           statusBarIconBrightness:
-              (darkTheme == true) ? Brightness.light : Brightness.dark),
+              (darkTheme == true) ? Brightness.dark : Brightness.light),
       foregroundColor: (darkTheme == true) ? Colors.white : Colors.black,
       iconTheme: IconThemeData(
         color: (darkTheme == true) ? Colors.white : Colors.black,
@@ -33,7 +33,7 @@ class AppBarsWidgets {
       automaticallyImplyLeading: implyLeading,
       title: Text(
         titleText ?? '',
-        style: TextStyle(
+        style: const TextStyle(
             decoration: TextDecoration.underline,
             decorationColor: Colors.deepOrange,
             decorationStyle: TextDecorationStyle.double,
@@ -53,8 +53,8 @@ class AppBarsWidgets {
       {bool implyLeading = true, Widget? title, bool centeredTitle = false}) {
     return AppBar(
       foregroundColor: Colors.white,
-      iconTheme: IconThemeData(color: Colors.white),
-      actionsIconTheme: IconThemeData(color: Colors.white),
+      iconTheme: const IconThemeData(color: Colors.white),
+      actionsIconTheme: const IconThemeData(color: Colors.white),
       flexibleSpace: Container(
         decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -75,8 +75,8 @@ class AppBarsWidgets {
       bool centeredTitle = false}) {
     return AppBar(
       foregroundColor: Colors.white,
-      iconTheme: IconThemeData(color: Colors.white),
-      actionsIconTheme: IconThemeData(color: Colors.white),
+      iconTheme: const IconThemeData(color: Colors.white),
+      actionsIconTheme: const IconThemeData(color: Colors.white),
       flexibleSpace: Container(
         decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -98,8 +98,8 @@ class AppBarsWidgets {
       bool centeredTitle = false}) {
     return AppBar(
       foregroundColor: Colors.white,
-      iconTheme: IconThemeData(color: Colors.white),
-      actionsIconTheme: IconThemeData(color: Colors.white),
+      iconTheme: const IconThemeData(color: Colors.white),
+      actionsIconTheme: const IconThemeData(color: Colors.white),
       flexibleSpace: Container(
         decoration: const BoxDecoration(
             gradient: LinearGradient(
