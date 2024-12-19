@@ -1,59 +1,61 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:foodnamamain/global_widgets/appbars.dart';
+import 'package:foodnamamain/global_widgets/image_widget.dart';
 import 'package:foodnamamain/modules/login/screens/login_screen.dart';
 import 'package:foodnamamain/utils/images_list.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class SplashScreen extends StatefulWidget {
+  Map<String, dynamic>? arguments;
+  SplashScreen({super.key, this.arguments});
 
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: CachedNetworkImage(
-          fadeInCurve: Curves.bounceIn,
-          fadeOutCurve: Curves.bounceOut,
-          alignment: Alignment.topLeft,
-          repeat: ImageRepeat.repeatY,
-          imageUrl: ImageNetworkList.splashNetworkLogo,
-          fit: BoxFit.fill,
-          imageBuilder: (context, imageProvider) => Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(image: imageProvider),
-                borderRadius:
-                    const BorderRadius.horizontal(left: Radius.circular(20))),
-            width: MediaQuery.of(context).size.width * 0.6,
-            height: MediaQuery.of(context).size.height * 0.6,
+      backgroundColor: Colors.red,
+      body: SafeArea(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ImageWidget.assetImageWidget(
+                  urlString: ImageAssetList.splashAssetLogo,
+                  widthSize: 50,
+                  heightSize: 50),
+              ImageWidget.networkImageWidget(
+                  urlString: ImageNetworkList.splashNetworkLogo,
+                  widthSize: 50,
+                  heightSize: 50),
+              ImageWidget.assetImageWidget(
+                  urlString: ImageAssetList.splashAssetLogo,
+                  widthSize: 50,
+                  heightSize: 50),
+              ImageWidget.assetImageWidget(
+                  urlString: ImageAssetList.splashAssetLogo,
+                  widthSize: 50,
+                  heightSize: 50),
+            ],
           ),
-          progressIndicatorBuilder: (context, url, progress) =>
-              const CircularProgressIndicator(),
-          errorWidget: (context, child, loadingProgress) {
-            return Container(
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius:
-                      BorderRadius.horizontal(left: Radius.circular(20))),
-              width: MediaQuery.of(context).size.width * 0.6,
-              height: MediaQuery.of(context).size.height * 0.6,
-              child: const Center(
-                child: Text(
-                  "Something Error",
-                  style: TextStyle(color: Colors.deepOrange, fontSize: 30),
-                ),
-              ),
-            );
-          },
         ),
-      ), // blank Area
+      ), //
+
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const LoginScreen(),
-              ));
+          Navigator.pushNamed(context, '/login2', arguments: {
+            // "title": "Page not found",
+            "inputs": {"input1": "Ankit"}
+          });
         },
       ),
       bottomNavigationBar: const SizedBox.shrink(),

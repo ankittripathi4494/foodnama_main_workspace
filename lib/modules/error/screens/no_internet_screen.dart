@@ -3,20 +3,20 @@ import 'package:foodnamamain/global_widgets/appbars.dart';
 import 'package:foodnamamain/global_widgets/image_widget.dart';
 import 'package:foodnamamain/utils/images_list.dart';
 
+//! calls when internet is not found
 // ignore: must_be_immutable
-class LoginScreen extends StatefulWidget {
+class NoInternetScreen extends StatefulWidget {
   Map<String, dynamic>? arguments;
-  LoginScreen({super.key, required this.arguments});
+  NoInternetScreen({super.key, required this.arguments});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<NoInternetScreen> createState() => _NoInternetScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _NoInternetScreenState extends State<NoInternetScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
       appBar: AppBarsWidgets.appBarVer2(
         title: Text(widget.arguments!['title']),
       ),
