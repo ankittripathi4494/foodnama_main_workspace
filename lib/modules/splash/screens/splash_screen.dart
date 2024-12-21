@@ -3,6 +3,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:foodnamamain/global_widgets/image_widget.dart';
+import 'package:foodnamamain/global_widgets/my_custom_drawer.dart';
 import 'package:foodnamamain/modules/login/screens/login_screen.dart';
 import 'package:foodnamamain/utils/images_list.dart';
 
@@ -19,6 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red,
+      drawer: MyCustomDrawer.getDrawer(),
       body: SafeArea(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,

@@ -12,7 +12,7 @@ class MyFlutterApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "Foodnama",
-      initialRoute: '/', // first navigator route
+      initialRoute: '/dashboard', // first navigator route
       onGenerateRoute: GenerateRoutePageSystem.getKnownRoutes,
     );
   }

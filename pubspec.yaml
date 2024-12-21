@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.8
   cached_network_image: ^3.4.1
   page_transition: ^2.1.0
+  syncfusion_flutter_datepicker: ^28.1.35
+
+  flutter_barcode_scanner:
+    path: ./flutter_barcode_scanner-master
 
 dev_dependencies:
   flutter_test:
