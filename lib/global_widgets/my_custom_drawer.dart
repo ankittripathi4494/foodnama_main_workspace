@@ -69,7 +69,11 @@ class DrawerSubPart extends StatelessWidget {
               subtitle: const Text("Manage Customers"),
               children: [
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, '/add-customer',
+                        arguments: {'title': 'Add New Customer'});
+                  },
                   visualDensity:
                       const VisualDensity(vertical: -4, horizontal: 0),
                   iconColor: Colors.green,
