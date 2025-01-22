@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:foodnamamain/modules/customers/screens/add_customer_screen.dart';
 import 'package:foodnamamain/modules/customers/screens/customer_list_screen.dart';
 import 'package:foodnamamain/modules/dashboard/screens/dashboard_screen.dart';
+import 'package:foodnamamain/modules/error/screens/no_internet_screen.dart';
 import 'package:foodnamamain/modules/error/screens/page_not_found_screen.dart';
 import 'package:foodnamamain/modules/login/screens/login_screen.dart';
 import 'package:foodnamamain/modules/profile/screens/profile_screen.dart';
@@ -61,6 +62,22 @@ class GenerateRoutePageSystem {
             type: PageTransitionType.fade,
             child: DashboardScreen(arguments: const {}),
             isIos: false);
+      case '/no-internet':
+        if (argus is Map<String, dynamic>) {
+          return PageTransition(
+              curve: Curves.bounceIn,
+              duration: Durations.short4,
+              type: PageTransitionType.fade,
+              child: NoInternetScreen(arguments: argus),
+              isIos: false);
+        }
+        return PageTransition(
+            curve: Curves.bounceIn,
+            duration: Durations.short4,
+            type: PageTransitionType.fade,
+            child: NoInternetScreen(arguments: const {}),
+            isIos: false);
+
       case '/profile':
         if (argus is Map<String, dynamic>) {
           return PageTransition(

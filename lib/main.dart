@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:foodnamamain/global_blocs/internet/internet_cubit.dart';
 import 'package:foodnamamain/utils/routes.dart';
 
 void main(List<String> args) {
@@ -10,10 +12,17 @@ class MyFlutterApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: "Foodnama",
-      initialRoute: '/dashboard', // first navigator route
-      onGenerateRoute: GenerateRoutePageSystem.getKnownRoutes,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<InternetCubit>(
+          create: (context) => InternetCubit(),
+        )
+      ],
+      child: const MaterialApp(
+        title: "Foodnama",
+        initialRoute: '/', // first navigator route
+        onGenerateRoute: GenerateRoutePageSystem.getKnownRoutes,
+      ),
     );
   }
 }

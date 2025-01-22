@@ -38,6 +38,9 @@ dependencies:
   cached_network_image: ^3.4.1
   page_transition: ^2.1.0
   syncfusion_flutter_datepicker: ^28.1.35
+  flutter_svg: ^2.0.17
+  flutter_bloc: ^9.0.0
+  connectivity_plus: ^6.1.2
 
 dev_dependencies:
   flutter_test:

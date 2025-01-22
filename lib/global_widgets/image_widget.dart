@@ -20,6 +20,24 @@ class ImageWidget {
         : null;
   }
 
+  static svgImageWidget(
+      {required String? urlString,
+      double? widthSize,
+      double? heightSize,
+      Color? backgroundColor,
+      bool isCirculrar = false}) {
+    return (urlString != null)
+        ? Container(
+            width: (widthSize != null) ? widthSize : null,
+            height: (heightSize != null) ? heightSize : null,
+            decoration: BoxDecoration(
+                color: backgroundColor,
+                image: DecorationImage(
+                    fit: BoxFit.contain, image: AssetImage(urlString))),
+          )
+        : null;
+  }
+
   static networkImageWidget(
       {required String? urlString,
       double? widthSize,
